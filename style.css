@@ -1,0 +1,248 @@
+
+/* Reset styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #000428, #004e92, #4b6cb7);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    transform: scale(1.02);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.btn-group .hero-btn {
+    margin: 0 10px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.btn-group .hero-btn::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn-group .hero-btn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-primary {
+    padding: 12px 30px; /* Wider padding for an oval shape */
+    border-radius: 30px; /* Makes the button oval */
+    background: linear-gradient(45deg, #ff7f50, #ffa07a); /* Coral to light salmon */
+    color: #fff;
+    border: none;
+    transition: background 0.3s;
+}
+btn-primary:hover {
+    background: linear-gradient(45deg, #ffa07a, #ff7f50); /* Reverse gradient on hover */
+}
+
+
+.btn-outline-light {
+    padding: 12px 30px; /* Wider padding for an oval shape */
+    border-radius: 30px; /* Makes the button oval */
+    color: #ffdd57; /* Yellow accent */
+    border: 2px solid #ffdd57; /* Yellow border for contrast */
+    transition: background 0.3s, color 0.3s;
+}
+
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 3% 3%;
+    opacity: 0.1;
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+    opacity: 0.05;
+    animation: particlesMove 20s linear infinite;
+}
+
+@keyframes particlesMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: #ffdd57; /* Yellow accent */
+    animation: scrollIndicatorBlink 1s infinite;
+}
+
+@keyframes scrollIndicatorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Learn More Section with Contrast Background */
+.learn-more-section {
+    background: linear-gradient(135deg, #ffdd57, #ff8c42); /* Yellow to Orange gradient */
+    padding: 100px 20px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.learn-more-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4b6cb7; /* Blue accent */
+}
+
+.learn-more-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #222;
+}
+
+.learn-more-btn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    background-color: #ff7f50; /* Coral */
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #ffa07a; /* Lighter coral */
+    color: #fff;
+}
+
+/* Contact Section with Teal and Coral Gradient */
+.contact-section {
+    background: linear-gradient(135deg,#000428, #004e92, #4b6cb7); 
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #004e92; /* Deep blue accent */
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #ffffff;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    border: 2px solid #ffdd57; /* Yellow border */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #20b2aa; /* Light Sea Green border */
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #ff7f50; /* Coral */
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ffa07a; /* Light salmon */
+}
